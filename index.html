@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/src/assets/github-mark.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.">
+    <meta name="keywords"
+      content="ремонт, ремонтируемые устройства, ноутбук, Dell">
+    <title>Авторизованный сервисный центр по ремонту техники Dell</title>
+
+    <!-- Подключаю нормалайз сиэсэс -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+  </head>
+  <body>
+    <header class="header flex">
+      <div class="header__container container flex">
+        <div class="header__block block flex">
+          <div class="block__burger">
+            <button class="btn btn__reset btn__burger"></button>
+          </div>
+          <a href="#" class="header__logo">
+            <img src="svg/Group.svg" alt="Logo" class="logo">
+          </a>
+        </div>
+        <nav class="header__nav nav flex">
+          <ul class="nav__list flex nav__list--hidden">
+            <li class="nav__item nav__item--hidden">
+              <button class="btn btn__reset btn--call">
+              </button>
+            </li>
+            <li class="nav__item nav__item--hidden">
+              <button class="btn btn__reset btn--message">
+              </button>
+            </li>
+            <li class="nav__item nav__item--hidden">
+              <button class="btn btn__reset btn--contacts">
+              </button>
+            </li>
+            <li class="nav__item nav__item--request">
+              <a href="#" class="nav__link nav__link--request">
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link nav__link--status">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main__wrapper flex">
+        <div class="container main__container">
+          <div class="main__search flex">
+            <h1 class="main__title">
+              <svg width="4" height="40" viewBox="0 0 4 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M4 4C4 1.79086 2.20914 0 0 0V40C2.20914 40 4 38.2091 4 36V4Z"
+                  fill="#41F6D7" />
+              </svg>
+              Услуги и&nbsp;сервисы
+            </h1>
+            <div class="main__inner inner flex">
+              <div class="inner__item flex">
+                <a href class="main__link main__link--request flex">
+                </a>
+                <span class="main__span">
+                  Оставить заявку
+                </span>
+              </div>
+              <div class="inner__item flex">
+                <a href class="main__link main__link--status flex">
+                </a>
+                <span class="main__span">
+                  Статус ремонта
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="main__menu">
+            <ul class="menu__list flex">
+              <li class="menu__item">
+                <a href="#" class="menu__link menu__link--active">
+                  <span>
+                    Ремонтируемые бренды
+                  </span>
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link menu__link--repaired--devices">
+                  <span>
+                    Ремонтируемые устройства
+                  </span>
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">
+                  Цены на&nbsp;услуги
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link menu__link--services-centres">
+                  Адреса сервисных центров
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link menu__link--special-prices">
+                  Специальные цены
+                </a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">
+                  Отзывы
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="main__content flex">
+            <div class="main__text text">
+              <div class="text__inner">
+                <p class="text__excerpt text__excerpt--top">
+                  Мы&nbsp;являемся авторизованным сервисным центром
+                  по&nbsp;ремонту техники Dell. Только у&nbsp;нас
+                  вы&nbsp;можете
+                  отремонтировать свой ноутбук Dell с официальной гарантией
+                  производителя.</p>
+                <p class="text__excerpt text__excerpt--bottom">
+                  Мы&nbsp;успешно работаем с&nbsp;1992 года и заслужили
+                  репутацию надежного партнера, что подтверждает большое
+                  количество постоянных клиентов. Мы&nbsp;гордимся тем, что
+                  к&nbsp;нам обращаются по&nbsp;рекомендациям&nbsp;и,
+                  в&nbsp;свою очередь, советуют нас родным и&nbsp;близким.
+                </p>
+              </div>
+              <button class="btn btn__reset text__btn">Читать далее</button>
+            </div>
+            <img src="img/main-1.jpg"
+              alt="Вывеска с информацией о компании CPS"
+              class="main__image">
+          </div>
+        </div>
+
+        <!-- Подключение свайпера 1 -->
+
+        <div class="swiper swiper1">
+          <div class="swiper__gradient-block">
+          </div>
+          <h2 class="swiper__title">
+            Ремонт техники различных брендов
+          </h2>
+          <!-- Additional required wrapper -->
+          <ul class="swiper-wrapper">
+            <!-- Slides -->
+          </ul>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          <button class="swiper__handler btn__reset">Показать все</button>
+        </div>
+
+        <!-- Подключение свайпера 2 -->
+        <div class="swiper swiper2">
+          <div class="swiper__gradient-block">
+          </div>
+          <h2 class="swiper__title">
+            Ремонт различных видов техники
+          </h2>
+          <!-- Additional required wrapper -->
+          <ul class="swiper-wrapper swiper-wrapper--big-size">
+
+            <!-- Slides -->
+          </ul>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          <button class="swiper__handler swiper__handler-2 btn__reset">Показать все</button>
+        </div>
+
+        <!-- Подключение свайпера 3 -->
+        <div class="swiper swiper3">
+          <div class="swiper__gradient-block">
+          </div>
+          <h2 class="swiper__title">
+            Цены на услуги
+          </h2>
+          <!-- Additional required wrapper -->
+          <ul class="swiper-wrapper swiper-wrapper--big-size">
+
+            <!-- Slides -->
+          </ul>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+          <button class="swiper__handler swiper__handler-2 btn__reset">Показать все</button>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Подключение меню -->
+    <aside class="aside flex">
+      <div class="aside__transition">
+        <div class="aside__header flex">
+          <button class="btn btn__reset aside__btn aside__btn--cancellation">
+          </button>
+          <div class="logoplace">
+            <a href="#" class="logo__link">
+              <img src="svg/cps.svg" alt="logo" class="logo">
+            </a>
+          </div>
+          <button class="btn btn__reset aside__btn aside__btn--search">
+          </button>
+        </div>
+        <nav class="main__nav nav">
+          <ul class="main__list flex">
+            <li class="main__item main__item--active">
+              <a href="#" class="main__link main__link--active">
+                Ремонт техники
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Услуги и&nbsp;сервисы
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Корпоративным клиентам
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Продавцам техники
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Партнерам
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Производителям
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Наши сервисные центры
+              </a>
+            </li>
+            <li class="main__item">
+              <a href="#" class="main__link">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="aside__footer">
+        <ul class="aside__btns-list flex">
+          <li class="aside__item">
+            <button class="btn btn__reset aside__btn aside__btn--phone">
+            </button>
+          </li>
+          <li class="aside__item">
+            <button class="btn btn__reset aside__btn aside__btn--feedback">
+            </button>
+          </li>
+          <li class="aside__item">
+            <button class="btn btn__reset aside__btn aside__btn--contacts">
+            </button>
+          </li>
+        </ul>
+        <ul class="aside__contacts contacts flex">
+          <li class="contacts__item">
+            <a href="mailto:mail@cps.com" class="contacts__link--mail">
+              mail@cps.com
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a href="tel:+78008908900" class="contacts__link--phone">
+              8 800 890 8900
+            </a>
+          </li>
+        </ul>
+        <ul class="aside__langs langs flex">
+          <li class="langs__item">
+            <a href class="langs__link langs__link--ru">
+              RU
+            </a>
+          </li>
+          <li class="langs__item">
+            <a href class="langs__link langs__link--en">
+              EN
+            </a>
+          </li>
+          <li class="langs__item">
+            <a href class="langs__link langs__link--ch">
+              CH
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- template/образец -->
+    <template id="slide-template">
+      <!-- образец 1 слайда -->
+      <div class="swiper-slide flex">
+        <div class="logoplace">
+        </div>
+        <button class="btn btn__swiper btn__reset">
+        </button>
+      </div>
+
+            <!-- образец 2 слайда -->
+
+      <div class="swiper-slide swiper-slide--size flex">
+        <p class="swiper__text"></p>
+        <button class="btn__swiper btn__reset btn__swiper--technick">
+        </button>
+      </div>
+
+            <!-- образец 3 слайда -->
+      <div class="swiper-slide swiper-slide__services flex">
+        <ul class="swiper__list flex">
+          <li class="swiper__item">
+            <p class="swiper__topic">Ремонтные услуги</p>
+            <span></span>
+          </li>
+          <li class="swiper__item">
+            <p class="swiper__topic">Цена</p>
+            <span></span>
+          </li>
+          <li class="swiper__item">
+            <p class="swiper__topic">Срок</p>
+            <span></span>
+          </li>
+        </ul>
+        <button class="btn btn__reset btn__swiper--services">
+          Заказать
+        </button>
+      </div>
+    </template>
+
+    <!-- <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="main.js"></script> -->
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
