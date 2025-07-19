@@ -1,0 +1,38 @@
+@use "./mixin" as *;
+@use "./variables" as *;
+
+html {
+    box-sizing: border-box;
+    }
+
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+}
+
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+p {
+margin:0;
+}
+
+h1 {
+  margin:0;
+}
+
+.btn__reset {
+  border:none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+}
