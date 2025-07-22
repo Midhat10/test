@@ -6,6 +6,6 @@
 // ```
 // @import "normalize/import-now.scss";
 // ```
-
-@import '../normalize';
+@use "./normalize-mixin" as *;
+@use '../normalize' as *;
 @include normalize();

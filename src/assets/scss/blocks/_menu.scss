@@ -1,0 +1,78 @@
+@use '../global/variables' as *;
+
+.menu {
+
+&__list {
+    overflow-x:auto;
+    padding:5px 0 5px 5px;
+    @media (min-width: 768px) {
+          padding-top: 6px;
+  }
+  @media (min-width: 1440px) {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    margin-left: 5px;
+    padding: 1px;
+  }
+}
+
+
+&__link {
+    display: block;
+    padding:5px 17px 7px 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $menu-link-color;
+    white-space: nowrap;
+    @media (min-width: 768px) {
+    padding: 7px 16.1px 5.5px;
+    letter-spacing: -0.4px;
+    @media (min-width: 1440px) {
+    padding: 8px 16px 5px 20px;
+    letter-spacing: -0.2px;
+  }
+  }
+}
+
+&__link:hover {
+    outline: 2px solid $menu-link-hover-color;
+    border-radius: 6px;
+}
+
+
+&__link:active {
+    border:none;
+}
+
+  &__link--active {
+    @media (min-width: 1440px) {
+    padding-right: 26px;
+    }
+  }
+
+  &__link--repaired--devices {
+    @media (min-width: 1440px) {
+    padding-right: 21px;
+    }
+  }
+
+  &__link--services-centres {
+    @media (min-width: 1440px) {
+    position:relative;
+    top:1.4px;
+    padding-right: 14px;
+    padding-left: 14px;
+    }
+  }
+
+  &__link--special-prices {
+    @media (min-width: 1440px) {
+    position:relative;
+    top:2.6px;
+    }
+  }
+}
+
+

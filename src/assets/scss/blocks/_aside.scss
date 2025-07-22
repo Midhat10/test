@@ -1,0 +1,70 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+
+.aside {
+  position: absolute;
+  top:0;
+  z-index: 100;
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  height: 100vh;
+  width:320px;
+  margin: 0 auto 0 0;
+  padding: 0 24px;
+  background-color: #ffffff;
+  box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2),
+-2px 0 4px 0 rgba(69, 79, 126, 0.02);
+
+  &__header {
+  padding-top:18.73px;
+  padding-bottom:46.27px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+&__logoplace {
+  margin-right: 60px;
+}
+
+&__btn {
+  bottom:5px;
+}
+
+&__btn--cancellation {
+  @include url("/images/cancellation-small.svg");
+}
+
+&__btn--search {
+  @include url ("/images/search-small.svg");
+}
+
+  &__btns-list {
+  margin-bottom: 11px;
+  gap:16px;
+}
+
+&__btn--phone {
+    @include url("/images/phone-small.svg");
+}
+
+&__btn--feedback {
+  @include url("/images/feedback-small.svg");
+}
+
+&__btn--contacts {
+  @include url ("/images/contacts-small.svg");
+}
+
+
+
+&__langs {
+  margin-top:40px;
+  padding-bottom: 32px;
+}
+
+}
+

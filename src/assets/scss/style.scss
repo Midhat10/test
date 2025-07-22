@@ -3,7 +3,20 @@
 @use "global/normalize/import-now";
 @use "global/mixin";
 @use "global/fonts";
+@use "global/global";
 // for js
 
 // blocks
+@use "blocks/header";
+@use "blocks/nav";
+@use "blocks/swiper";
+@use "blocks/btn";
+@use "blocks/main";
+@use "blocks/menu";
+@use "blocks/text";
+@use "blocks/aside";
+@use "blocks/contacts";
+@use "blocks/langs";
+@use "blocks/block";
+@use "blocks/inner";
 

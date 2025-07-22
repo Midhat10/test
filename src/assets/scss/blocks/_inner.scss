@@ -1,0 +1,17 @@
+  .inner {
+
+    @media (min-width: 1440px) {
+    display: flex;
+    gap: 32px;
+    }
+
+    &__item {
+     @media (min-width: 1440px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+  }
+}
+  }
+
+

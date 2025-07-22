@@ -1,4 +1,6 @@
 @use "sass:math";
+@use "./variables" as *;
+@use "./vertical-rhythm" as *;
 
 // Helper function for the normalize() mixin.
 

@@ -1,0 +1,234 @@
+@use "../global/variables" as *;
+
+.swiper {
+  padding-left: 16px;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &__logoplace {
+  display: block;
+  width: 56%;
+  height: 105%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+
+  &__title {
+    position: relative;
+    left: -24px;
+    width: 100vw;
+
+    margin: 0;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-bottom: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $menu-link-color;
+    text-shadow: 0 4px 4px $text-shadow-color;
+    background-image: linear-gradient(90deg, $background-color 0%, $white 100%);
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &__title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $blue-line;
+  }
+
+  &-wrapper {
+    padding-top: 20px;
+    height: 86px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 24px;
+      row-gap: 16px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 1024px) {
+      column-gap: 32px;
+    }
+  }
+
+  &-wrapper--big-size {
+    height: 184px;
+  }
+
+  &__gradient-block {
+    position: absolute;
+    z-index: 10;
+    top: 72px;
+    right: 0;
+
+    display: block;
+    width: 24px;
+    height: -webkit-fill-available;
+    background-image: linear-gradient(
+      to left,
+      #f8f8f8 0.04%,
+      rgba(248, 248, 248, 0) 100%
+    );
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &-slide {
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 17px 17px 16px 16px;
+    height: 72px;
+    background-color: $white;
+
+    @media (min-width: 768px) {
+      width: 224px;
+
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      width: 240px;
+
+      &:nth-child(n + 7) {
+        display: flex;
+      }
+
+      &:nth-child(n + 9) {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__show:nth-child(n + 4) {
+      display: flex;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__show:nth-child(n + 5) {
+      display: flex;
+    }
+  }
+
+  &-slide--size {
+    flex-direction: column;
+    height: 160px;
+    @media (min-width: 768px) {
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+    @media (min-width: 1024px) {
+    &:nth-child(n + 4) {
+      display: flex;
+    };
+    &:nth-child(n + 5) {
+      display: none;
+    }
+  }
+  }
+
+  &-slide__services {
+    align-items: flex-end;
+    justify-content: normal;
+    height: 160px;
+  }
+
+  &__list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__topic {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    color: $menu-link-color;
+    opacity: 0.72;
+  }
+
+  &__topic ~ span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: 0.01em;
+    color:$main-title-color;
+  }
+
+  &-pagination {
+    position: static;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__handler {
+    position: relative;
+    z-index: 10;
+
+    display: none;
+    padding-left: 33px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-title-color;
+    background-color: transparent;
+    @media (min-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  &__handler::after {
+    content: "";
+
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    height: 12px;
+    width: 11px;
+    background-color: transparent;
+    background-image: url("/images/arrows-down.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

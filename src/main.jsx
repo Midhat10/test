@@ -75,8 +75,8 @@ const newSlideTemplates3 = newSlideTemplates[2];
 const addSlide = function (template,list,logotype,index,array) {
   const slide = template.cloneNode(true);
   if (logotype) {
-      const logo = slide.querySelector(".logoplace");
-      logo.style.backgroundImage = `url(${logotype})`;
+      const logo = slide.querySelector(".swiper__logoplace");
+      logo.style.backgroundImage = `url('${logotype}')`;
   }
 
    if (index && !array) {
