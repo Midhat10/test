@@ -22,10 +22,14 @@
     @include urlf ("/images/burger.svg");
   }
 
-  // &__menu--active {
-  //   display: flex;
-  // }
-
+  &__aside-feedback {
+    margin-top: 24px;
+    @media (min-width:768px) {
+    position: absolute;
+    top: 10px;
+    left: -60px;
+    }
+  }
 
   &__text {
     position:relative;
