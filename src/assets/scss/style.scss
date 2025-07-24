@@ -3,6 +3,7 @@
 @use "global/normalize/import-now";
 @use "global/mixin";
 @use "global/fonts";
+@use "global/reset";
 @use "global/global";
 // for js
 
@@ -19,4 +20,5 @@
 @use "blocks/langs";
 @use "blocks/block";
 @use "blocks/inner";
+@use "blocks/form";
 

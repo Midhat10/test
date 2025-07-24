@@ -94,8 +94,8 @@
     height: -webkit-fill-available;
     background-image: linear-gradient(
       to left,
-      #f8f8f8 0.04%,
-      rgba(248, 248, 248, 0) 100%
+      $background-color 0.04%,
+      $transparent 100%
     );
 
     @media (min-width: 768px) {
@@ -107,7 +107,7 @@
     justify-content: space-between;
 
     box-sizing: border-box;
-    border: 1px solid #eaeaea;
+    border: 1px solid $partition-color;
     border-radius: 6px;
     padding: 17px 17px 16px 16px;
     height: 72px;

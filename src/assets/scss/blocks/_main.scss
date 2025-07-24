@@ -17,10 +17,17 @@ background: transparent url(/images/request.svg) no-repeat center center;
 }
 
 .main {
+    @media (min-width: 1440px) {
+      background-color: beige;
+    }
+
 
   &__container {
     @media (min-width: 1440px) {
           padding-right: 28px;
+          position:relative;
+          order:2;
+          right:0;
   }
   }
 
@@ -40,13 +47,13 @@ background: transparent url(/images/request.svg) no-repeat center center;
     flex-direction: column;
     align-items: center;
 
-    /* opacity: 0.1;
-    pointer-events: none;
-    user-select: none; */
+
     background-color: $background-color;
     @media (min-width: 1440px) {
-    margin: 0 auto;
-    width: 1120px;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 1440px;
+      margin: 0 auto;
   }
 }
 

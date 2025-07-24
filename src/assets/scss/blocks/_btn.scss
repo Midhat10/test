@@ -9,9 +9,9 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   transition: filter 0.3s ease-in-out;
-  
+
   &:hover {
-    filter:brightness(3);
+    filter:brightness(1.7);
   }
 
   &:active {
@@ -22,6 +22,10 @@
     @include urlf ("/images/burger.svg");
   }
 
+  // &__menu--active {
+  //   display: flex;
+  // }
+
 
   &__text {
     position:relative;
@@ -31,6 +35,22 @@
     height: unset;
     background-color: transparent;
     }
+
+    &__submit {
+      border-radius: 16px;
+      width: min-content;
+      padding-right: 30px;
+
+      font-family: $font-stack;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 200%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      text-align: left;
+      color: #fff;
+    }
+
 
   &__text::before {
     content:"";

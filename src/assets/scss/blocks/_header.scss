@@ -1,3 +1,6 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+
 .header {
   align-items: center;
   margin:0;

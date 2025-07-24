@@ -4,20 +4,67 @@
 .aside {
   position: absolute;
   top:0;
-  z-index: 100;
+  z-index: 3;
 
-  display: none;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
-
-  height: 100vh;
+  height: 1650px;
   width:320px;
   margin: 0 auto 0 0;
   padding: 0 24px;
   background-color: #ffffff;
-  box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2),
--2px 0 4px 0 rgba(69, 79, 126, 0.02);
+  box-shadow: 16px 0 52px 0 $box-shadow-color1,
+-2px 0 4px 0 $box-shadow-color2;
+
+  &__burger {
+    display: none;
+    left:0;
+
+    gap:241px;
+  }
+
+  &__feedback {
+    right: 0;
+  }
+
+  &__callback {
+    display: none;
+  }
+
+
+  @media (min-width:768px) {
+    width:360px;
+  }
+  @media (min-width:1440px) {
+    position:relative;
+
+    display: flex !important;
+    justify-content:flex-start;
+
+    box-shadow: none;
+  }
+
+  &__title {
+    font-family: $font-stack;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    letter-spacing: -0.03em;
+    color: $main-title-color;
+
+  &::before {
+    content: "";
+    position:absolute;
+    top:35px;
+    left:0;
+    width:4px;
+    height: 40px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: $aside-link-color;
+  }
+  }
 
   &__header {
   padding-top:18.73px;
@@ -36,6 +83,9 @@
 
 &__btn--cancellation {
   @include url("/images/cancellation-small.svg");
+  @media (min-width:1440px) {
+    display: none;
+  }
 }
 
 &__btn--search {

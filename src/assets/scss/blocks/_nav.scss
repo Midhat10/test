@@ -1,5 +1,9 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+
+
 .nav {
-  
+
 
 &__list {
     gap: 16px;
@@ -65,7 +69,7 @@
     left:-22px;
     width:2px;
     height: 32px;
-    background-color: #eaeaea;
+    background-color: $partition-color;
     @media (min-width: 768px) {
           left: -20px;
   }

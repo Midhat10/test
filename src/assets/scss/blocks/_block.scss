@@ -1,4 +1,8 @@
-  .block {
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+
+
+.block {
 
   &__burger {
     @media (min-width: 768px) {
@@ -14,7 +18,7 @@
     height: 32px;
     right: -20px;
     top: 5px;
-    background-color: #eaeaea;
+    background-color: $partition-color;
     }
   }
   }

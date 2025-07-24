@@ -1,0 +1,76 @@
+@use "./mixin" as *;
+@use "./variables" as *;
+
+
+:root {
+  --swiper-pagination-color: #b5b6bc;
+  --swiper-pagination-bullet-inactive-color: #ddd;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-size:12px;
+  --swiper-pagination-bullet-horizontal-gap:6px;
+}
+
+
+
+html {
+    box-sizing: border-box;
+    }
+
+*,
+*::before,
+*::after {
+box-sizing: inherit;
+}
+
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:$black;
+}
+
+p {
+margin:0;
+}
+
+h1 {
+  margin:0;
+}
+
+.btn__reset {
+  border:none;
+  border-radius: $standart-radius;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width:320px;
+    font-family: $font-stack;
+    font-weight: 400;
+}
+
+.container {
+  max-width: 1120px;
+  padding: 0 16px;
+  margin: 0 auto;
+  width: 100%;
+  @media (min-width: 768px) {
+        padding: 0 24px;
+}
+  @media (min-width: 1440px) {
+    padding: 0 34px;
+    width: 1120px;
+    margin: 0 auto;
+  }
+}

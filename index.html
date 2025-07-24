@@ -204,11 +204,8 @@
 
 
 
-      </div>
-    </main>
-
-    <!-- Подключение меню -->
-    <aside class="aside flex">
+         <!-- Подключение меню 1 -->
+    <aside class="aside aside__burger">
       <div class="aside__transition">
         <div class="aside__header flex">
           <button class="btn btn__reset aside__btn aside__btn--cancellation">
@@ -312,6 +309,35 @@
         </ul>
       </div>
     </aside>
+              <!-- Подключение меню 2 -->
+           <aside class="aside aside__feedback">
+            <button class="btn btn__reset aside__btn aside__btn--cancellation">
+          </button>
+            <p class="aside__title">
+              Обратная связь
+            </p>
+            <form action="none" method="post" enctype="application/x-www-form-urlencoded" class="form form__feedback">
+              <input type="text" name="name" id="name" placeholder="Имя">
+              <input type="number" name="number" id="number" placeholder="Телефон">
+              <input type="email" name="email" id="email" placeholder="Электронная почта">
+              <textarea name="textarea" id="textarea" cols="30" rows="10" style="resize: none;" placeholder="Сообщение"></textarea>
+              <p class="form__text">
+                Нажимая &laquo;отправить&raquo;, вы&nbsp;даете согласие на&nbsp;<a href="" target="_blank" rel="noopener noreferrer">обработку персональных данных</a> и&nbsp;соглашаетесь с&nbsp;нашей <a href="" target="_blank">политикой конфиденциальности</a>
+              </p>
+              <input type="submit" value="ОТПРАВИТЬ" class="btn btn__reset btn__submit">
+            </form>
+           </aside>
+
+                     <!-- Подключение меню 3 -->
+           <aside class="aside aside__callback">
+
+           </aside>
+      </div>
+
+
+    </main>
+
+
 
     <!-- template/образец -->
     <template id="slide-template">

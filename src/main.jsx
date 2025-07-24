@@ -1,20 +1,23 @@
+// импортируем стили
 import './assets/scss/style.scss'
-import './index.css'
 
+// создаём объект, в который будем хранить свойства - ключ.
 const dataProperty = {
   "Ремонтные услуги":1,
   "Цена": 2,
   "Срок": 3
 }
 
-
-
+// создаём переменные, которые будут ключами в объекте
 const data1 = ["Диагностика","Замена Дисплея","Замена полифонического динамика","Тестирование с выдачей технического заключения","Замена программного обеспечения"];
 const data2 = ["Бесплатно","1000 р","1000 р","1000 р","1000 р"];
 const data3 = ["30 мин","30-120 мин","30-120 мин","30-120 мин","30-120 мин"];
 
+// переменная, которая будет хранить объекты
 const list123 = []
 
+// прогоняем через функцию. Чтобы объект перестал быть ссылочным,
+// то мы ему зададим функцию структуредклон.
 for (let i = 0; i < 5; i++) {
   const try1 = structuredClone(dataProperty);
   try1["Ремонтные услуги"] = data1[i]
@@ -23,8 +26,8 @@ for (let i = 0; i < 5; i++) {
 
   list123.push(try1);
 }
-  console.log(list123);
 
+// объявляем свайпер функцию для 1 и 2 свайпера.
 const getSwiper = (swiper123) =>
   new window.Swiper(swiper123, {
     // Optional parameters
@@ -40,6 +43,7 @@ const getSwiper = (swiper123) =>
     }
   });
 
+  // объявляем свайпер функцию для 3 свайпера
   const getSwiper2 = (swiper123) =>
   new window.Swiper(swiper123, {
     // Optional parameters
@@ -55,7 +59,7 @@ const getSwiper = (swiper123) =>
     }
   });
 
-// Ищет в дом дереве обёртку свайпера
+// Ищет в дом дереве обёртку свайпера, куда нужно будет вставлять слайды
 const lists = document.querySelectorAll(".swiper-wrapper");
 const list1 = lists[0];
 const list2 = lists[1];
@@ -65,13 +69,14 @@ const items2 = list2.children
 const items3 = list3.children
 
 
-
+// теперь ищем образец, по которому будем делать слайды
 const swiperTemplate = document.querySelector("#slide-template").content
 const newSlideTemplates = swiperTemplate.querySelectorAll(".swiper-slide");
 const newSlideTemplates1 = newSlideTemplates[0];
 const newSlideTemplates2 = newSlideTemplates[1];
 const newSlideTemplates3 = newSlideTemplates[2];
 
+// создаём функцию для добавления слайдов
 const addSlide = function (template,list,logotype,index,array) {
   const slide = template.cloneNode(true);
   if (logotype) {
@@ -94,7 +99,7 @@ const addSlide = function (template,list,logotype,index,array) {
   list.appendChild(slide);
 };
 
-
+// запускаем прорисовку слайдов
 const render = function () {
   for (let i = 1; i <= 8; i++) {
     addSlide(newSlideTemplates1,list1,`/test/public/images/logo-${i}.png`);
@@ -117,16 +122,17 @@ render();
 
 
 
-
-// ставим прослушиватель на кнопку Показать всё.
-
-
-
+// в начале ищем кнопки Показать всё
 const btnHandlers = document.querySelectorAll(".swiper__handler");
 const btnHandler1 = btnHandlers[0];
 const btnHandler2 = btnHandlers[1];
 const btnHandler3 = btnHandlers[2];
 
+// ищем бургер
+const btnBurgerHandler = document.querySelector(".btn__burger")
+// Ищем крестик
+const btnCrossHandler = document.querySelector(".aside__btn--cancellation");
+// создаём функцию, которая будет создавать прослушиватель события
 const inputFunction = function (btnHandler,items,list) {
   btnHandler.addEventListener("click", function () {
     const text = btnHandler.textContent;
@@ -148,9 +154,46 @@ const inputFunction = function (btnHandler,items,list) {
   } );
 }
 
+const containerDOM = document.querySelector('.main__container');
+const headerDOM = document.querySelector('.header');
+  const asideDOM = document.querySelector('.aside');
+
+btnBurgerHandler.addEventListener('click', function() {
+  asideDOM.style.display = "flex";
+  headerDOM.classList.add('blur');
+  containerDOM.classList.add('blur');
+  console.log(window.getComputedStyle(asideDOM).display === "flex");
+})
+
+btnCrossHandler.addEventListener('click', function() {
+  asideDOM.style.display = "none";
+  headerDOM.classList.remove('blur');
+  containerDOM.classList.remove('blur');
+  console.log(window.getComputedStyle(asideDOM).display === "flex");
+})
+
+window.addEventListener('click', function (e) {
+
+if (asideDOM.contains(e.target) === false && window.getComputedStyle(asideDOM).display === "flex") {
+  console.log('popitka');
+  asideDOM.style.display = "none";
+  headerDOM.classList.remove('blur');
+  containerDOM.classList.remove('blur');
+  }
+}, {capture:true})
+
+
+
+
+
+
+
+// теперь создаём прослушиватель события через функцию.
 inputFunction(btnHandler1,items1,list1)
 inputFunction(btnHandler2,items2,list2)
 inputFunction(btnHandler3,items3,list3)
+
+
 
 
 

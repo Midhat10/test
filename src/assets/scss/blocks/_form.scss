@@ -1,0 +1,37 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+
+  &__text {
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    color: $menu-link-color;
+
+  & > a {
+    color:$btn-color
+  }
+  }
+
+  & > input, textarea {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+  }
+
+  & > input {
+    height: 48px;
+  }
+
+  & > textarea {
+    height: 118px;
+  }
+
+  & > input[type ^= "sub"] {
+    background: $btn-color url(/test/public/images/arrow-white.svg) no-repeat 90% center;
+  }
+};
