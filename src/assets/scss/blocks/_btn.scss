@@ -79,6 +79,20 @@
     @include urlf("/images/contacts.svg")
   }
 
+  &--cancellation {
+  @include url("/images/cancellation-small.svg");
+  &-1 {
+      @media (min-width:1440px) {
+    display: none;
+  }
+  }
+}
+
+&--search {
+  @include url ("/images/search-small.svg");
+}
+
+
   &__swiper {
   position: relative;
   width: 36px;

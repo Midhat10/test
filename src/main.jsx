@@ -128,10 +128,7 @@ const btnHandler1 = btnHandlers[0];
 const btnHandler2 = btnHandlers[1];
 const btnHandler3 = btnHandlers[2];
 
-// ищем бургер
-const btnBurgerHandler = document.querySelector(".btn__burger")
-// Ищем крестик
-const btnCrossHandler = document.querySelector(".aside__btn--cancellation");
+
 // создаём функцию, которая будет создавать прослушиватель события
 const inputFunction = function (btnHandler,items,list) {
   btnHandler.addEventListener("click", function () {
@@ -154,29 +151,43 @@ const inputFunction = function (btnHandler,items,list) {
   } );
 }
 
+// Создаём ДОМ переменные, находим элементы в хтмл документе
 const containerDOM = document.querySelector('.main__container');
 const headerDOM = document.querySelector('.header');
-  const asideDOM = document.querySelector('.aside');
+const asideDOM1 = document.querySelectorAll('.aside')[0];
+console.log(asideDOM1);
+const asideDOM2 = document.querySelectorAll('.aside')[1];
+// const asideDOM3 = document.querySelectorall('.aside')[2];
+
+// ищем бургер
+const btnBurgerHandler = document.querySelector(".btn__burger")
+// Ищем крестик
+const btnCrossHandler1 = document.querySelectorAll(".aside__btn--cancellation")[0];
+const btnCrossHandlers = document.querySelectorAll(".aside__btn--cancellation")[1];
+console.log(btnCrossHandlers);
+// Ищем звоночек
+const btnFeedbackHandlers = document.querySelectorAll('.aside__btn--feedback');
+console.log(btnFeedbackHandlers);
 
 btnBurgerHandler.addEventListener('click', function() {
-  asideDOM.style.display = "flex";
+  asideDOM1.style.display = "flex";
   headerDOM.classList.add('blur');
   containerDOM.classList.add('blur');
-  console.log(window.getComputedStyle(asideDOM).display === "flex");
+  console.log(window.getComputedStyle(asideDOM1).display === "flex");
 })
 
-btnCrossHandler.addEventListener('click', function() {
-  asideDOM.style.display = "none";
+btnCrossHandler1.addEventListener('click', function() {
+  asideDOM1.style.display = "none";
   headerDOM.classList.remove('blur');
   containerDOM.classList.remove('blur');
-  console.log(window.getComputedStyle(asideDOM).display === "flex");
+  console.log(window.getComputedStyle(asideDOM1).display === "flex");
 })
 
 window.addEventListener('click', function (e) {
 
-if (asideDOM.contains(e.target) === false && window.getComputedStyle(asideDOM).display === "flex") {
+if (asideDOM1.contains(e.target) === false && window.getComputedStyle(asideDOM1).display === "flex" && asideDOM2.contains(e.target) === false) {
   console.log('popitka');
-  asideDOM.style.display = "none";
+  asideDOM1.style.display = "none";
   headerDOM.classList.remove('blur');
   containerDOM.classList.remove('blur');
   }
