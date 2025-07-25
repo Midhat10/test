@@ -155,25 +155,35 @@ const inputFunction = function (btnHandler,items,list) {
 const containerDOM = document.querySelector('.main__container');
 const headerDOM = document.querySelector('.header');
 const asideDOM1 = document.querySelectorAll('.aside')[0];
-console.log(asideDOM1);
+const aside = asideDOM1; // Когда ширина экрана более 1440px, то нужно чтобы при открытии правых меню, был заблюрено левое меню
 const asideDOM2 = document.querySelectorAll('.aside')[1];
+const asideDOM3 = document.querySelectorAll('.aside')[2];
 // const asideDOM3 = document.querySelectorall('.aside')[2];
 
 // ищем бургер
 const btnBurgerHandler = document.querySelector(".btn__burger")
 // Ищем крестик
-const btnCrossHandler1 = document.querySelectorAll(".aside__btn--cancellation")[0];
-const btnCrossHandlers = document.querySelectorAll(".aside__btn--cancellation")[1];
-console.log(btnCrossHandlers);
-// Ищем звоночек
-const btnFeedbackHandlers = document.querySelectorAll('.aside__btn--feedback');
-console.log(btnFeedbackHandlers);
+const btnCrossHandler1 = document.querySelectorAll(".btn--cancellation")[0];
+const btnCrossHandler2 = document.querySelectorAll(".btn--cancellation")[1];
+const btnCrossHandler3 = document.querySelectorAll(".btn--cancellation")[2];
+// Ищем сообщения
+const btnFeedbackHandler1 = document.querySelectorAll('.btn--message')[0];
+const btnFeedbackHandler2 = document.querySelectorAll('.btn--message')[1];
+// Ищем звоночки
+const btnCallHandler1 = document.querySelectorAll('.btn--call')[0];
+const btnCallHandler2 = document.querySelectorAll('.btn--call')[1];
 
+
+// Функция. 1 параметр - кнопка, раскрывающая меню. 2 параметр - какое меню раскрыть. 3 параметр - кнопка закрывающая. 4,5 параметры - если нажать на другое меню, пока раскрыто 1, не должно закрываться 1 меню.
+const inputFunction2 = function (btnBurgerHandler,asideDOM1,btnCrossHandler1,asideDOM2,asideDOM3) {
 btnBurgerHandler.addEventListener('click', function() {
   asideDOM1.style.display = "flex";
   headerDOM.classList.add('blur');
   containerDOM.classList.add('blur');
   console.log(window.getComputedStyle(asideDOM1).display === "flex");
+  if (window.innerWidth > 1440) {
+  aside.classList.add('blur');
+  }
 })
 
 btnCrossHandler1.addEventListener('click', function() {
@@ -181,19 +191,31 @@ btnCrossHandler1.addEventListener('click', function() {
   headerDOM.classList.remove('blur');
   containerDOM.classList.remove('blur');
   console.log(window.getComputedStyle(asideDOM1).display === "flex");
+    if (window.innerWidth > 1440) {
+  aside.classList.remove('blur');
+  }
 })
 
 window.addEventListener('click', function (e) {
 
-if (asideDOM1.contains(e.target) === false && window.getComputedStyle(asideDOM1).display === "flex" && asideDOM2.contains(e.target) === false) {
+if (asideDOM1.contains(e.target) === false && window.getComputedStyle(asideDOM1).display === "flex" && asideDOM2.contains(e.target) === false && asideDOM3.contains(e.target) === false) {
   console.log('popitka');
   asideDOM1.style.display = "none";
   headerDOM.classList.remove('blur');
   containerDOM.classList.remove('blur');
+  if (window.innerWidth > 1440) {
+  aside.classList.remove('blur');
+  }
   }
 }, {capture:true})
 
+}
 
+inputFunction2(btnBurgerHandler,asideDOM1,btnCrossHandler1,asideDOM2,asideDOM3);
+inputFunction2(btnFeedbackHandler1,asideDOM2,btnCrossHandler2,asideDOM1,asideDOM3);
+inputFunction2(btnFeedbackHandler2,asideDOM2,btnCrossHandler2,asideDOM1,asideDOM3);
+inputFunction2(btnCallHandler1,asideDOM3,btnCrossHandler3,asideDOM1,asideDOM2);
+inputFunction2(btnCallHandler2,asideDOM3,btnCrossHandler3,asideDOM1,asideDOM2);
 
 
 
