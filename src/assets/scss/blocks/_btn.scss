@@ -104,6 +104,15 @@
   background-position: 50% 50%;
   background-color: transparent;
 
+  &--services {
+    margin-left: auto;
+    border-radius: 16px;
+    padding-left: 8px;
+    height: 32px;
+    background: #FF3E79 url(/test/public/images/arrow-white.svg) no-repeat 90% center;
+}
+
+
   &--technick {
   margin-left: auto;
 }
