@@ -110,6 +110,9 @@
     padding-left: 8px;
     height: 32px;
     background: #FF3E79 url(/test/public/images/arrow-white.svg) no-repeat 90% center;
+    @media (min-width:768px) {
+      margin-right: 24px;
+    }
 }
 
 

@@ -146,7 +146,7 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
 
     if (windowWidth < 768) {
       slidesToShow = slides.length; // Показываем все слайды
-    } else if (windowWidth <= 1440) {
+    } else if (windowWidth <= 1040) {
       slidesToShow = visibleSlides[0]; // Используем значение для первого слайдера
     } else {
       slidesToShow = visibleSlides[1]; // Используем значение для второго слайдера
