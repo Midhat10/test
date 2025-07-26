@@ -8,7 +8,6 @@ const list2 = lists[1];
 const list3 = lists[2];
 const items1 = list1.children;
 const items2 = list2.children;
-const items3 = list3.children;
 
 // создаём объект, в который будем хранить свойства - ключ.
 const dataProperty = {
@@ -136,53 +135,62 @@ render();
 const btnHandlers = document.querySelectorAll(".swiper__handler");
 const btnHandler1 = btnHandlers[0];
 const btnHandler2 = btnHandlers[1];
-const btnHandler3 = btnHandlers[2];
 
 // создаём функцию, которая будет создавать прослушиватель события
-const inputFunction = function (btnHandler, items, list, count) {
-  if (window.innerWidth > 768) {
-    for (let i = count; i < items.length; i++) {
-      items[i].style.display = "none";
-    } } else {
-      if (window.innerWidth > 1024) {
-    for (let i = count + 2; i < items.length; i++) {
-      items[i].style.display = "none";
+const inputFunction = function (btnHandler, items, list, visibleSlides) {
+  const slides = [...items];
+
+  const updateSlidesVisibility = () => {
+    const windowWidth = window.innerWidth;
+    let slidesToShow;
+
+    if (windowWidth < 768) {
+      slidesToShow = slides.length; // Показываем все слайды
+    } else if (windowWidth <= 1440) {
+      slidesToShow = visibleSlides[0]; // Используем значение для первого слайдера
+    } else {
+      slidesToShow = visibleSlides[1]; // Используем значение для второго слайдера
     }
-    }
-  }
-  
-  window.addEventListener('resize', function () {
-  if (window.innerWidth > 768) {
-    for (let i = count; i < items.length; i++) {
-      items[i].style.display = "none";
-    }
-  }
-  })
+
+    slides.forEach((slide, index) => {
+      if (index >= slidesToShow) {
+        slide.classList.add('hidden'); // Добавляем класс для скрытия
+      } else {
+        slide.classList.remove('hidden'); // Убираем класс, если слайд видимый
+      }
+    });
+
+    // Устанавливаем отступ в зависимости от состояния
+    const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
+    list.style.marginBottom = allHidden ? '24px' : '45px';
+  };
+
+  // Инициализация видимости слайдов
+  updateSlidesVisibility();
+
+  // Устанавливаем текст кнопки
+  btnHandler.textContent = 'Показать всё';
 
   btnHandler.addEventListener("click", function () {
-    const text = btnHandler.textContent;
-    console.log(text);
-    if (text === "Показать все") {
-      for (let i = 0; i < items.length; i++) {
-        items[i].style.display = "flex";
+    slides.forEach((slide, index) => {
+      if (index >= visibleSlides[0]) { // Здесь можно изменить на нужное количество
+        slide.classList.toggle('hidden');
       }
-      btnHandler.textContent = "Скрыть";
-      list.style.marginBottom = "45px";
-      console.log(text);
-    } else {
-      for (let i = count; i < items.length; i++) {
-        items[i].style.display = "none";
-      }
-      btnHandler.textContent = "Показать все";
-      list.style.marginBottom = "24px";
-    }
+    });
+
+    // Проверяем, есть ли видимые слайды
+    const allHidden = slides.slice(visibleSlides[0]).every(slide => slide.classList.contains('hidden'));
+    btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
+    list.style.marginBottom = allHidden ? '24px' : '45px';
   });
+
+  // Добавляем обработчик события resize
+  window.addEventListener('resize', updateSlidesVisibility);
 };
 
 // теперь создаём прослушиватель события через функцию.
-inputFunction(btnHandler1, items1, list1, 6);
-inputFunction(btnHandler2, items2, list2, 3);
-inputFunction(btnHandler3, items3, list3, 3);
+inputFunction(btnHandler1, items1,list1,[6,8]);
+inputFunction(btnHandler2, items2,list2,[3,4]);
 
 // Делаем интерактивность для левого и 2 правых менюшек
 // Создаём ДОМ переменные, находим элементы в хтмл документе
