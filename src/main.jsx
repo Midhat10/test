@@ -139,10 +139,10 @@ const btnHandler2 = btnHandlers[1];
 // создаём функцию, которая будет создавать прослушиватель события
 const inputFunction = function (btnHandler, items, list, visibleSlides) {
   const slides = [...items];
-
+  let slidesToShow;
   const updateSlidesVisibility = () => {
     const windowWidth = window.innerWidth;
-    let slidesToShow;
+
 
     if (windowWidth < 768) {
       slidesToShow = slides.length; // Показываем все слайды
@@ -151,6 +151,7 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
     } else {
       slidesToShow = visibleSlides[1]; // Используем значение для второго слайдера
     }
+
 
     slides.forEach((slide, index) => {
       if (index >= slidesToShow) {
@@ -163,25 +164,29 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
     // Устанавливаем отступ в зависимости от состояния
     const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
     list.style.marginBottom = allHidden ? '24px' : '45px';
+    btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
+    return slidesToShow
   };
 
   // Инициализация видимости слайдов
   updateSlidesVisibility();
 
-  // Устанавливаем текст кнопки
-  btnHandler.textContent = 'Показать всё';
+  // Устанавливаем текст кнопки в зависимости от состояния слайдов
+  const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
+  btnHandler.textContent = allHidden ? 'Показать всё' : 'Скрыть всё';
 
   btnHandler.addEventListener("click", function () {
     slides.forEach((slide, index) => {
-      if (index >= visibleSlides[0]) { // Здесь можно изменить на нужное количество
+      if (index >= slidesToShow) { // Регулируем, кому добавлять hidden
         slide.classList.toggle('hidden');
       }
     });
 
     // Проверяем, есть ли видимые слайды
-    const allHidden = slides.slice(visibleSlides[0]).every(slide => slide.classList.contains('hidden'));
+    const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
     btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
     list.style.marginBottom = allHidden ? '24px' : '45px';
+    console.log(slides.slice(slidesToShow).map(slide => slide.classList.contains('hidden')));
   });
 
   // Добавляем обработчик события resize

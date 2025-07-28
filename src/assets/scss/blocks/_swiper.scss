@@ -66,6 +66,7 @@
     @media (min-width: 768px) {
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
       column-gap: 24px;
       row-gap: 16px;
       height: auto;
@@ -131,11 +132,21 @@
     height: 184px;
   }
 
+  &-wrapper--technics {
+    @media (min-width:786px) {
+      height: inherit;
+    }
+  }
+
   &-wrapper--services {
     gap:0;
   }
 
 
+  &-slide--size {
+    flex-direction: column;
+    height: 160px;
+  }
 
   &-slide__services {
     display: flex;
