@@ -170,6 +170,35 @@ background: transparent url(/images/request.svg) no-repeat center center;
   }
 }
 
+&__descr {
+  p {
+    margin-bottom: 10px;
+    max-width: 80%;
+
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.01em;
+    color: $main-title-color;
+    @media (min-width:768px) {
+      max-width: 433px;
+    }
+  }
+  a {
+    display: inline-block;
+    width: 70%;
+    font-family: $font-stack;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: $main-title-color;
+  }
+}
+
+
+
 
 &__image {
     width:320px;

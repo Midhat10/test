@@ -1,0 +1,13 @@
+@use '../global/variables' as *;
+@use "../global/mixin" as *;
+
+.footer {
+
+  &__copyright {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    p {
+      text-align: center;
+    }
+  }
+}

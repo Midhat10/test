@@ -41,7 +41,6 @@
     background-image: linear-gradient(90deg, $background-color 0%, $white 100%);
 
     @media (min-width: 768px) {
-      margin-bottom: 40px;
       left:-24px;
     }
   }
@@ -130,13 +129,11 @@
   &-wrapper--technics ,
   &-wrapper--services {
     height: 184px;
+        @media (min-width: 768px) {
+      height: auto;
+  }
   }
 
-  &-wrapper--technics {
-    @media (min-width:786px) {
-      height: inherit;
-    }
-  }
 
   &-wrapper--services {
     gap:0;
