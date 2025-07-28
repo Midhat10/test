@@ -1,0 +1,18 @@
+@use '../global/variables' as *;
+@use "../global/mixin" as *;
+
+.copyright {
+  position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 32px;
+    padding-bottom: 21px;
+    &::before {
+      @include line-before();
+      // width:106%;
+      // left:-32px;
+    }
+    p {
+      text-align: center;
+    }
+  }
