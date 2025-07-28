@@ -112,11 +112,11 @@ const addSlide = function (template, list, logotype, index, array) {
 // запускаем прорисовку слайдов
 const render = function () {
   for (let i = 1; i <= 8; i++) {
-    addSlide(newSlideTemplates1, list1, ``);
+    addSlide(newSlideTemplates1, list1, `./images/logo-2.png`);
   }
 
   for (let i = 1; i <= 3; i++) {
-    addSlide(newSlideTemplates1, list1, ``);
+    addSlide(newSlideTemplates1, list1, `./images/logo-2.png`);
   }
 
   for (let i = 1; i <= 8; i++) {
