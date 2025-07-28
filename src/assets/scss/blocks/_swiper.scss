@@ -187,6 +187,9 @@
   }
 
   &__topic ~ span {
+    display: inline-block;
+    width: 120%;
+
     font-family: $font-stack;
     font-weight: 400;
     font-size: 14px;

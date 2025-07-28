@@ -171,6 +171,7 @@ background: transparent url(/images/request.svg) no-repeat center center;
 }
 
 &__descr {
+  margin-bottom: 50px;
   p {
     margin-bottom: 10px;
     max-width: 80%;
@@ -194,6 +195,15 @@ background: transparent url(/images/request.svg) no-repeat center center;
     line-height: 150%;
     letter-spacing: -0.01em;
     color: $main-title-color;
+
+    @media (min-width:768px) {
+      width:29%
+    }
+
+    background-image: url(/test/images/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-color: transparent;
   }
 }
 
