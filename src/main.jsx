@@ -128,6 +128,7 @@ const render = function () {
   }
 };
 
+console.log("hello");
 render();
 
 // Делаем интерактивность для свайперов.
