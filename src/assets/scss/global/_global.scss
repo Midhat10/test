@@ -8,10 +8,18 @@
       user-select: none;
     }
 
+    .no-scroll {
+      overflow: hidden;
+    }
+
     .hidden {
       display: none;
     }
 
+    .height-reset {
+      height: auto;
+    }
+
     .visible {
-      display: inherit!important;
+      display: inherit;
     }

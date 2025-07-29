@@ -131,6 +131,8 @@ const render = function () {
 console.log("hello");
 render();
 
+// Делаем интерактивность для Читать далее.
+
 // Делаем интерактивность для свайперов.
 // в начале ищем кнопки Показать всё
 const btnHandlers = document.querySelectorAll(".swiper__handler");
@@ -220,6 +222,21 @@ const btnFeedbackHandler2 = document.querySelectorAll(".btn--message")[1];
 // Ищем звоночки
 const btnCallHandler1 = document.querySelectorAll(".btn--call")[0];
 const btnCallHandler2 = document.querySelectorAll(".btn--call")[1];
+// Ищем body
+const body = document.body;
+// Ищем читать далее
+const btnRead = document.querySelector('.btn__text');
+const textInner = document.querySelector('.text__inner');
+
+
+btnRead.addEventListener('click', function () {
+ textInner.classList.toggle('height-reset');
+  const heightIs = textInner.classList.contains('height-reset');
+
+  btnRead.textContent = heightIs ? "Скрыть" : "Читать далее";
+})
+
+
 
 // Функция. 1 параметр - кнопка, раскрывающая меню. 2 параметр - какое меню раскрыть. 3 параметр - кнопка закрывающая. 4,5 параметры - если нажать на другое меню, пока раскрыто 1, не должно закрываться 1 меню.
 const inputFunction2 = function (
@@ -236,9 +253,9 @@ const inputFunction2 = function (
     console.log(window.getComputedStyle(asideDOM1).display === "flex");
     if (window.innerWidth > 1440) {
       aside.classList.add("blur");
+      body.classList.add("no-scroll")
     }
   });
-
   btnCrossHandler1.addEventListener("click", function () {
     asideDOM1.style.display = "none";
     headerDOM.classList.remove("blur");
@@ -246,6 +263,7 @@ const inputFunction2 = function (
     console.log(window.getComputedStyle(asideDOM1).display === "flex");
     if (window.innerWidth > 1440) {
       aside.classList.remove("blur");
+      body.classList.remove("no-scroll")
     }
   });
 
@@ -264,6 +282,7 @@ const inputFunction2 = function (
         containerDOM.classList.remove("blur");
         if (window.innerWidth > 1440) {
           aside.classList.remove("blur");
+          body.classList.remove("no-scroll")
         }
       }
     },

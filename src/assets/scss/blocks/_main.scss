@@ -144,7 +144,7 @@ background: transparent url(/images/request.svg) no-repeat center center;
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    height: 208px;
+    min-height: 208px;
     margin:0;
     padding-right: 8px;
     gap:48px;
