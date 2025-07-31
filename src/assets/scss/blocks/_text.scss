@@ -1,19 +1,18 @@
 @use "../global/variables" as *;
 
 .text {
-
   &__inner {
-  margin-top:11px;
-  height: 106px;
-  overflow: hidden;
-  @media (min-width: 768px) {
-        margin-top: 0;
-    height: 77px;
-  }
-  @media (min-width: 1440px) {
-    margin-bottom: 6px;
+    margin-top: 11px;
+    height: 106px;
     overflow: hidden;
-  }
+    @media (min-width: 768px) {
+      margin-top: 0;
+      height: 77px;
+    }
+    @media (min-width: 1440px) {
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
   }
 
   &__excerpt {
@@ -23,29 +22,28 @@
     letter-spacing: 0.01em;
     color: $main-title-color;
     @media (min-width: 768px) {
-    line-height: 143%;
-    margin: 0;
-    letter-spacing: 0px;
-  }
-  @media (min-width: 1440px) {
-    letter-spacing: 0.22px;
-  }
+      line-height: 143%;
+      margin: 0;
+      letter-spacing: 0px;
+    }
+    @media (min-width: 1440px) {
+      letter-spacing: 0.22px;
+    }
   }
 
   &__excerpt--top {
     margin-bottom: 17px;
     @media (min-width: 768px) {
-    margin-bottom: 17px;
-  }
-  @media (min-width: 1440px) {
-    margin-bottom: 19px;
-  }
-  }
-
-    &__excerpt--bottom {
-      @media (min-width: 768px) {
-    width: 101%;
-      }
+      margin-bottom: 17px;
+    }
+    @media (min-width: 1440px) {
+      margin-bottom: 19px;
+    }
   }
 
+  &__excerpt--bottom {
+    @media (min-width: 768px) {
+      width: 101%;
+    }
+  }
 }

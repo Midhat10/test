@@ -6,19 +6,17 @@
 
   @media (min-width: 768px) {
     margin-left: 0;
-
   }
 
-
   &__logoplace {
-  display: block;
-  width: 56%;
-  height: 105%;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left center;
-}
+    display: block;
+    width: 56%;
+    height: 105%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+  }
 
   &__title {
     position: relative;
@@ -41,10 +39,9 @@
     background-image: linear-gradient(90deg, $background-color 0%, $white 100%);
 
     @media (min-width: 768px) {
-      left:-24px;
+      left: -24px;
     }
   }
-
 
   &__title::before {
     content: "";
@@ -77,8 +74,6 @@
     }
   }
 
-
-
   &__gradient-block {
     position: absolute;
     z-index: 10;
@@ -101,14 +96,13 @@
 
   &__topics {
     display: none;
-    @media (min-width:768px) {
-    display: grid;
-    grid-template-columns: 2.9fr 0.9fr 1fr 144px;
-    width: inherit;
-    margin-bottom: 16px;
-    padding-left: 24px;
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 2.9fr 0.9fr 1fr 144px;
+      width: inherit;
+      margin-bottom: 16px;
+      padding-left: 24px;
     }
-
   }
 
   &-slide {
@@ -123,22 +117,20 @@
 
     @media (min-width: 768px) {
       width: 224px;
+    }
   }
-}
 
-  &-wrapper--technics ,
+  &-wrapper--technics,
   &-wrapper--services {
     height: 184px;
-        @media (min-width: 768px) {
+    @media (min-width: 768px) {
       height: auto;
+    }
   }
-  }
-
 
   &-wrapper--services {
-    gap:0;
+    gap: 0;
   }
-
 
   &-slide--size {
     flex-direction: column;
@@ -150,24 +142,23 @@
     align-items: flex-end;
     justify-content: normal;
     height: 160px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: 1fr 144px;
       align-items: baseline;
-      width:inherit;
+      width: inherit;
       height: 64px;
     }
-
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: 3fr 1fr 1fr;
-      gap:0;
+      gap: 0;
     }
   }
 
@@ -195,7 +186,7 @@
     font-size: 14px;
     line-height: 129%;
     letter-spacing: 0.01em;
-    color:$main-title-color;
+    color: $main-title-color;
   }
 
   &-pagination {

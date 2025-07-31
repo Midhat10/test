@@ -1,8 +1,12 @@
 @use "../global/variables" as *;
 
-
-@mixin typografy($font-weight,$font-size,
-$line-height,$letter-spacing,$color) {
+@mixin typografy(
+  $font-weight,
+  $font-size,
+  $line-height,
+  $letter-spacing,
+  $color
+) {
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;
@@ -11,7 +15,7 @@ $line-height,$letter-spacing,$color) {
 }
 
 @mixin url($url) {
-background-image: url($url);
+  background-image: url($url);
 }
 
 @mixin urlf($url) {
@@ -19,12 +23,12 @@ background-image: url($url);
 }
 
 @mixin line-before() {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: #d9fff5;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #d9fff5;
 }

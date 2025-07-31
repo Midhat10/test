@@ -1,19 +1,15 @@
 @use "../global/variables" as *;
 @use "../global/mixin" as *;
 
-
-
 .contacts {
   flex-direction: column;
-  gap:12px;
+  gap: 12px;
 
   &__link--mail {
-  @include typografy(500,16px, 150%,-0.01em,$main-title-color);
-}
+    @include typografy(500, 16px, 150%, -0.01em, $main-title-color);
+  }
 
-&__link--phone {
-  @include typografy(700,24px, 133%,-0.03em,$main-title-color);
+  &__link--phone {
+    @include typografy(700, 24px, 133%, -0.03em, $main-title-color);
+  }
 }
-
-}
-

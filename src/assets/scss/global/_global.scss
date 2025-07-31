@@ -1,25 +1,24 @@
+@use "./variables" as *;
+@use "./mixin" as *;
 
-  @use "./variables" as *;
-  @use "./mixin" as *;
+.blur {
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+}
 
-   .blur {
-      opacity: 0.1;
-      pointer-events: none;
-      user-select: none;
-    }
+.no-scroll {
+  overflow: hidden;
+}
 
-    .no-scroll {
-      overflow: hidden;
-    }
+.hidden {
+  display: none;
+}
 
-    .hidden {
-      display: none;
-    }
+.height-reset {
+  height: auto;
+}
 
-    .height-reset {
-      height: auto;
-    }
-
-    .visible {
-      display: inherit;
-    }
+.visible {
+  display: inherit;
+}

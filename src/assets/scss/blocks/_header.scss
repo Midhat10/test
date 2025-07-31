@@ -3,7 +3,7 @@
 
 .header {
   align-items: center;
-  margin:0;
+  margin: 0;
   padding-top: 2px;
   height: 88px;
 
@@ -12,35 +12,32 @@
     padding: 0;
   }
 
-
   @media (min-width: 1440px) {
-        display: none;
+    display: none;
   }
 
   &__container {
-  padding-left:16px;
-  padding-right: 16px;
-  justify-content: space-between;
-}
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: space-between;
+  }
 
-
-&__block {
+  &__block {
     gap: 16px;
     align-items: center;
     @media (min-width: 768px) {
-    gap: 39px;
+      gap: 39px;
+    }
   }
-
-}
- &--left {
-  @media (min-width: 768px) {
-    gap: 40px; }
+  &--left {
+    @media (min-width: 768px) {
+      gap: 40px;
+    }
   }
 
   &__nav {
     @media (min-width: 768px) {
-    margin-right: 15px;
+      margin-right: 15px;
     }
   }
 }
-

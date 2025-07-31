@@ -7,5 +7,5 @@
 // @import "normalize/import-now.scss";
 // ```
 @use "./normalize-mixin" as *;
-@use '../normalize' as *;
+@use "../normalize" as *;
 @include normalize();

@@ -4,7 +4,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap:16px;
+  gap: 16px;
 
   &__text {
     font-family: $font-stack;
@@ -13,12 +13,13 @@
     line-height: 114%;
     color: $menu-link-color;
 
-  & > a {
-    color:$btn-color
-  }
+    & > a {
+      color: $btn-color;
+    }
   }
 
-  & > input, textarea {
+  & > input,
+  textarea {
     border: 1px solid #eaeaea;
     border-radius: 8px;
     padding-left: 16px;
@@ -33,11 +34,12 @@
     padding-top: 12px;
   }
 
-  & > input[type ^= "sub"] {
+  & > input[type^="sub"] {
     margin-left: auto;
     border-radius: 16px;
     padding-left: 8px;
     height: 32px;
-    background: $btn-color url(/test/public/images/arrow-white.svg) no-repeat 90% center;
+    background: $btn-color url(/test/public/images/arrow-white.svg) no-repeat
+      90% center;
   }
-};
+}

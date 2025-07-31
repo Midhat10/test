@@ -16,7 +16,6 @@ const dataProperty = {
   Срок: 3,
 };
 
-
 // создаём переменные, которые будут ключами в объекте
 const data1 = [
   "Диагностика",
@@ -147,7 +146,6 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
   const updateSlidesVisibility = () => {
     const windowWidth = window.innerWidth;
 
-
     if (windowWidth < 768) {
       slidesToShow = slides.length; // Показываем все слайды
     } else if (windowWidth <= 1040) {
@@ -156,50 +154,60 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
       slidesToShow = visibleSlides[1]; // Используем значение для второго слайдера
     }
 
-
     slides.forEach((slide, index) => {
       if (index >= slidesToShow) {
-        slide.classList.add('hidden'); // Добавляем класс для скрытия
+        slide.classList.add("hidden"); // Добавляем класс для скрытия
       } else {
-        slide.classList.remove('hidden'); // Убираем класс, если слайд видимый
+        slide.classList.remove("hidden"); // Убираем класс, если слайд видимый
       }
     });
 
     // Устанавливаем отступ в зависимости от состояния
-    const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
-    list.style.marginBottom = allHidden ? '24px' : '45px';
+    const allHidden = slides
+      .slice(slidesToShow)
+      .every((slide) => slide.classList.contains("hidden"));
+    list.style.marginBottom = allHidden ? "24px" : "45px";
     btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
-    return slidesToShow
+    return slidesToShow;
   };
 
   // Инициализация видимости слайдов
   updateSlidesVisibility();
 
   // Устанавливаем текст кнопки в зависимости от состояния слайдов
-  const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
-  btnHandler.textContent = allHidden ? 'Показать всё' : 'Скрыть всё';
+  const allHidden = slides
+    .slice(slidesToShow)
+    .every((slide) => slide.classList.contains("hidden"));
+  btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
 
   btnHandler.addEventListener("click", function () {
     slides.forEach((slide, index) => {
-      if (index >= slidesToShow) { // Регулируем, кому добавлять hidden
-        slide.classList.toggle('hidden');
+      if (index >= slidesToShow) {
+        // Регулируем, кому добавлять hidden
+        slide.classList.toggle("hidden");
       }
     });
 
     // Проверяем, есть ли видимые слайды
-    const allHidden = slides.slice(slidesToShow).every(slide => slide.classList.contains('hidden'));
+    const allHidden = slides
+      .slice(slidesToShow)
+      .every((slide) => slide.classList.contains("hidden"));
     btnHandler.textContent = allHidden ? "Показать всё" : "Скрыть всё";
-    list.style.marginBottom = allHidden ? '24px' : '45px';
-    console.log(slides.slice(slidesToShow).map(slide => slide.classList.contains('hidden')));
+    list.style.marginBottom = allHidden ? "24px" : "45px";
+    console.log(
+      slides
+        .slice(slidesToShow)
+        .map((slide) => slide.classList.contains("hidden")),
+    );
   });
 
   // Добавляем обработчик события resize
-  window.addEventListener('resize', updateSlidesVisibility);
+  window.addEventListener("resize", updateSlidesVisibility);
 };
 
 // теперь создаём прослушиватель события через функцию.
-inputFunction(btnHandler1, items1,list1,[6,8]);
-inputFunction(btnHandler2, items2,list2,[3,4]);
+inputFunction(btnHandler1, items1, list1, [6, 8]);
+inputFunction(btnHandler2, items2, list2, [3, 4]);
 
 // Делаем интерактивность для левого и 2 правых менюшек
 // Создаём ДОМ переменные, находим элементы в хтмл документе
@@ -226,18 +234,15 @@ const btnCallHandler2 = document.querySelectorAll(".btn--call")[1];
 // Ищем body
 const body = document.body;
 // Ищем читать далее
-const btnRead = document.querySelector('.btn__text');
-const textInner = document.querySelector('.text__inner');
+const btnRead = document.querySelector(".btn__text");
+const textInner = document.querySelector(".text__inner");
 
-
-btnRead.addEventListener('click', function () {
- textInner.classList.toggle('height-reset');
-  const heightIs = textInner.classList.contains('height-reset');
+btnRead.addEventListener("click", function () {
+  textInner.classList.toggle("height-reset");
+  const heightIs = textInner.classList.contains("height-reset");
 
   btnRead.textContent = heightIs ? "Скрыть" : "Читать далее";
-})
-
-
+});
 
 // Функция. 1 параметр - кнопка, раскрывающая меню. 2 параметр - какое меню раскрыть. 3 параметр - кнопка закрывающая. 4,5 параметры - если нажать на другое меню, пока раскрыто 1, не должно закрываться 1 меню.
 const inputFunction2 = function (
@@ -254,7 +259,7 @@ const inputFunction2 = function (
     console.log(window.getComputedStyle(asideDOM1).display === "flex");
     if (window.innerWidth > 1440) {
       aside.classList.add("blur");
-      body.classList.add("no-scroll")
+      body.classList.add("no-scroll");
     }
   });
   btnCrossHandler1.addEventListener("click", function () {
@@ -264,7 +269,7 @@ const inputFunction2 = function (
     console.log(window.getComputedStyle(asideDOM1).display === "flex");
     if (window.innerWidth > 1440) {
       aside.classList.remove("blur");
-      body.classList.remove("no-scroll")
+      body.classList.remove("no-scroll");
     }
   });
 
@@ -283,7 +288,7 @@ const inputFunction2 = function (
         containerDOM.classList.remove("blur");
         if (window.innerWidth > 1440) {
           aside.classList.remove("blur");
-          body.classList.remove("no-scroll")
+          body.classList.remove("no-scroll");
         }
       }
     },

@@ -3,68 +3,67 @@
 
 .btn {
   position: relative;
-  width:40px;
-  height:40px;
-  background-color:$btn-color;
+  width: 40px;
+  height: 40px;
+  background-color: $btn-color;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   transition: filter 0.3s ease-in-out;
 
   &:hover {
-    filter:brightness(1.7);
+    filter: brightness(1.7);
   }
 
   &:active {
-    filter:brightness(0.9);
+    filter: brightness(0.9);
   }
 
   &__burger {
-    @include urlf ("/images/burger.svg");
+    @include urlf("/images/burger.svg");
   }
 
   &--cancellation-2 {
     margin-top: 24px;
-    @media (min-width:768px) {
-    position: absolute;
-    top: 10px;
-    left: -60px;
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 10px;
+      left: -60px;
     }
   }
 
   &__text {
-    position:relative;
+    position: relative;
     margin-left: 15px;
     padding-left: 16px;
     width: unset;
     height: unset;
     background-color: transparent;
-    }
+  }
 
-    &__submit {
-      border-radius: 16px;
-      width: min-content;
-      padding-right: 30px;
+  &__submit {
+    border-radius: 16px;
+    width: min-content;
+    padding-right: 30px;
 
-      font-family: $font-stack;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 200%;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      text-align: left;
-      color: #fff;
-    }
-
+    font-family: $font-stack;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 200%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    text-align: left;
+    color: #fff;
+  }
 
   &__text::before {
-    content:"";
-    position:absolute;
-    left:-7px;
-    top:6px;
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 6px;
     display: block;
-    width:8px;
-    height:11px;
-    @include urlf('/images/arrows-down.svg');
+    width: 8px;
+    height: 11px;
+    @include urlf("/images/arrows-down.svg");
   }
 
   &--call {
@@ -76,49 +75,47 @@
   }
 
   &--contacts {
-    @include urlf("/images/contacts.svg")
+    @include urlf("/images/contacts.svg");
   }
 
   &--cancellation {
-  @include url("/images/cancellation-small.svg");
-  &-1 {
-      @media (min-width:1440px) {
-    display: none;
+    @include url("/images/cancellation-small.svg");
+    &-1 {
+      @media (min-width: 1440px) {
+        display: none;
+      }
+    }
   }
+
+  &--search {
+    @include url("/images/search-small.svg");
   }
-}
-
-&--search {
-  @include url ("/images/search-small.svg");
-}
-
 
   &__swiper {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  outline: 2px solid $btn-color;
-  background-image: url('/images/arrow.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-color: transparent;
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    outline: 2px solid $btn-color;
+    background-image: url("/images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: transparent;
 
-  &--services {
-    margin-left: auto;
-    border-radius: 16px;
-    padding-left: 8px;
-    height: 32px;
-    background: #FF3E79 url(/public/images/arrow-white.svg) no-repeat 90% center;
-    @media (min-width:768px) {
-      margin-right: 24px;
+    &--services {
+      margin-left: auto;
+      border-radius: 16px;
+      padding-left: 8px;
+      height: 32px;
+      background: #ff3e79 url(/public/images/arrow-white.svg) no-repeat 90%
+        center;
+      @media (min-width: 768px) {
+        margin-right: 24px;
+      }
     }
-}
 
-
-  &--technick {
-  margin-left: auto;
+    &--technick {
+      margin-left: auto;
+    }
+  }
 }
-}
-}
-
