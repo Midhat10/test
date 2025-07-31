@@ -2,21 +2,21 @@
 @use "../global/mixin" as *;
 
 .block {
-  &__burger {
-    @media (min-width: 768px) {
-      position: relative;
-    }
-  }
+	&__burger {
+		@media (min-width: 768px) {
+			position: relative;
+		}
+	}
 
-  &__burger::after {
-    @media (min-width: 768px) {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 32px;
-      right: -20px;
-      top: 5px;
-      background-color: $partition-color;
-    }
-  }
+	&__burger::after {
+		@media (min-width: 768px) {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 32px;
+			right: -20px;
+			top: 5px;
+			background-color: $partition-color;
+		}
+	}
 }
