@@ -163,6 +163,7 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
     });
 
     // Устанавливаем отступ в зависимости от состояния
+
     const allHidden = slides
       .slice(slidesToShow)
       .every((slide) => slide.classList.contains("hidden"));
@@ -175,6 +176,7 @@ const inputFunction = function (btnHandler, items, list, visibleSlides) {
   updateSlidesVisibility();
 
   // Устанавливаем текст кнопки в зависимости от состояния слайдов
+
   const allHidden = slides
     .slice(slidesToShow)
     .every((slide) => slide.classList.contains("hidden"));
